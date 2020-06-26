@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css"
+    />
+    <title>Blog</title>
+  </head>
+  <body>
+    <h1><%= article.title %></h1>
+    <div><%= article.createdAt.toLocaleDateString() %></div>
+    <a href="/" class="ts button">全部文章</a>
+
+    <a href="/articles/edit/<%= article.id %>" class="ts button info"
+      >修改文章</a
+    >
+
+    <div>
+      <%- article.sanitizedHtml %>
+    </div>
+  </body>
+</html>

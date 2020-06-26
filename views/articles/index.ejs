@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/2.3.3/tocas.css"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>Blog</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Blog</h1>
+        <a href="/articles/new" class="ts positive button">新增</a>
+      </div>
+
+      <div class="ts cards two qwe">
+        <% articles.forEach(article =>{ %>
+        <div class="ts raised card">
+          <div class="content">
+            <div class="header">
+              <h1><%= article.title %></h1>
+            </div>
+            <div class="meta">
+              <%= article.createdAt.toLocaleDateString() %>
+            </div>
+            <div class="description">
+              <p><%= article.description %></p>
+              <div>
+                <a href="articles/<%= article.slug %>" class="ts button basic"
+                  >檢視更多</a
+                >
+                <a href="articles/edit<%= article.id %>" class="ts button info"
+                  >修改</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+          <button
+            type="submit"
+            class="ts top right corner close button large"
+          ></button>
+        </form>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

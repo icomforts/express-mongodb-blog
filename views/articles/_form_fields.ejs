@@ -1,0 +1,22 @@
+<div class="ts form">
+  <div class="field">
+    <label>文章標題</label>
+    <input
+      required
+      type="text"
+      name="title"
+      id="title"
+      value="<%= article.title %>"
+    />
+    <label>文章簡介</label>
+    <textarea rows="3" name="description" id="description">
+<%= article.description %>
+    </textarea>
+    <label>文章內容</label>
+    <textarea required rows="5" name="markdown" id="markdown">
+<%= article.markdown %>
+    </textarea>
+  </div>
+  <button class="ts primary button" type="submit">送出</button>
+  <a href="/" class="ts button">取消</a>
+</div>
